@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith- loan eligibility checker</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/tailwind.css">
+</head>
+
+<body>
+    <div class="main">
+        <!-- navbar -->
+        <div>
+            <div class='nav-1'>
+                <div class='nav-2'>
+                    <a href="/"><h1 class='nav-brand'>zenith</h1></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- form -->
+        <!-- question are asked in reverse order -->
+        <div id="1" class="ques">
+            <img src="/static/images/gender.png" class="ques-background-img-bc" style="width: 10%;">
+            <h1 class="ques-h1">What is your Gender?</h1>
+            <div class="ques-options"><button onclick="next('1')" class="ques-option-inner">Male</button><button onclick="next('1')" class="ques-option-inner">Female</button></div>
+        </div>
+        <div id="2" class="ques">
+            <img src="/static/images/age.png" class="ques-background-img-bl">
+            <h1 class="ques-h1">What is your Age?</h1>
+            <div class="ques-options"><button onclick="next('2')" class="ques-option-inner">Above 50</button><button onclick="next('2')" class="ques-option-inner">Below 50</button></div>
+        </div>
+        <div id="3" class="ques">
+            <img src="/static/images/family.png" class="ques-background-img-bl">
+            <h1 class="ques-h1">How many family members are there?</h1>
+            <div class="ques-options"><button onclick="next('3')" class="ques-option-inner">Less than 4</button><button onclick="next('3')" class="ques-option-inner">Greater than 4</button></div>
+        </div>
+        <div id="4" class="ques">
+            <img src="/static/images/work.png" class="ques-background-img-br" style="width: 15%; filter: brightness(75%);">
+            <h1 class="ques-h1">Are you working?</h1>
+            <div class="ques-options"><button onclick="next('4')" class="ques-option-inner">Yes</button><button onclick="next('4')" class="ques-option-inner">No</button></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function next(index){
+        document.getElementById(index).childNodes[1].className+=" move-down";
+        let index_int = parseInt(index)-1;
+        let prev = index_int.toString();
+        // document.getElementById(prev).classList.add("pop-out");
+        document.getElementById(index).classList.add("move-right");
+        // setTimeout(function(){
+        //     document.getElementById(prev).classList.remove("pop-out");
+        // }, 3000);
+    }
+</script>
+
+</html>
