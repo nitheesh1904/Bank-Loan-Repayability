@@ -96,3 +96,11 @@ button {
     padding: 0;
     text-transform: inherit;
 }
+
+
+input[type=button], input[type=submit]{
+    color: white;
+    background-color: transparent;
+    cursor: url("cursor.svg"), auto;
+    
+}
