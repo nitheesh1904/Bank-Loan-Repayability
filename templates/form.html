@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith- loan eligibility checker</title>
+    <title>Skew- Repayment Scope Calculator</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/global.css">
     <link rel="stylesheet" href="/static/tailwind.css">
@@ -16,7 +16,7 @@
         <div>
             <div class='nav-1'>
                 <div class='nav-2'>
-                    <a href="/"><h1 class='nav-brand'>zenith</h1></a>
+                    <a href="/"><h1 class='nav-brand'>Skew</h1></a>
                 </div>
             </div>
         </div>
@@ -24,43 +24,43 @@
         <!-- form -->
         <!-- question are asked in reverse order -->
         <div id="7" class="ques">
-            <img src="/static/images/other_loan.png" class="ques-background-img-bl" style="width: 15%;">
+            <img src="/static/images/other_loan.png" class="ques-background-img">
             <h1 class="ques-h1">Have you taken any other loans?</h1>
-            <div class="ques-options"><button onclick="next('7')" class="ques-option-inner">Yes</button><button onclick="next('6')" class="ques-option-inner">No</button></div>
+            <div class="ques-options"><button onclick="next('7')" class="ques-option-inner">Yes</button><button onclick="next('7')" class="ques-option-inner">No</button></div>
         </div>
         <div id="6" class="ques">
-            <img src="/static/images/savings.png" class="ques-background-img-bl" style="width: 15%;">
+            <img src="/static/images/savings.png" class="ques-background-img" style="right: 0;">
             <h1 class="ques-h1">Your savings account balance?</h1>
             <div class="ques-options" style="flex-direction:column"><button onclick="next('6')" class="ques-option-inner">less than 100</button><button onclick="next('6')" class="ques-option-inner">between 100 and 500</button><button onclick="next('6')" class="ques-option-inner">greater than 500</button></div>
         </div>
         <div id="5" class="ques">
-            <img src="/static/images/current.png" class="ques-background-img-bl" style="width: 15%;">
+            <img src="/static/images/current.png" class="ques-background-img" style="left: 0;">
             <h1 class="ques-h1">Your current account balance?</h1>
             <div class="ques-options" style="flex-direction:column"><button onclick="next('5')" class="ques-option-inner">less than 0/ no account</button><button onclick="next('5')" class="ques-option-inner">between 0 and 200</button><button onclick="next('5')" class="ques-option-inner">greater than 200</button></div>
         </div>
         <div id="4" class="ques">
-            <img src="/static/images/loan.png" class="ques-background-img-br" style="width: 10%;">
+            <img src="/static/images/loan.png" class="ques-background-img img-special" style="left: 0;">
             <h1 class="ques-h1">Please enter your loan history</h1>
             <div class="ques-options" style="flex-direction: column; width: 80%;"><button onclick="next('4')" class="ques-option-inner">No loans taken at previously/ All past loans paid pack duly and no other loans exist currently</button><button onclick="next('4')" class="ques-option-inner">critical account</button><button onclick="next('4')" class="ques-option-inner">I have other ongoing loans but I have paid all my dues promptly so far</button><button onclick="next('4')" class="ques-option-inner">I have had a delay in paying off loans in the past</button></div>
         </div>
         <div id="3" class="ques">
-            <img src="/static/images/guarantor.png" class="ques-background-img-bl" style="filter:brightness(50%); width:15%">
+            <img src="/static/images/guarantor.png" class="ques-background-img" style="filter:brightness(50%); left: 0;">
             <h1 class="ques-h1">Do you have a guarantor or Co-applicant?</h1>
             <div class="ques-options"><button onclick="next('3')" class="ques-option-inner">Guarantor</button><button onclick="next('3')" class="ques-option-inner">Co-applicant</button><button onclick="next('3')" class="ques-option-inner">None</button></div>
         </div>
         <div id="2" class="ques">
-            <img src="/static/images/married.png" class="ques-background-img-bl" style="filter: brightness(100%); width: 15%;">
+            <img src="/static/images/married.png" class="ques-background-img" style="filter: brightness(100%);">
             <h1 class="ques-h1">Please mention your marital status</h1>
             <div class="ques-options"><button onclick="next('2')" class="ques-option-inner">Married</button><button onclick="next('2')" class="ques-option-inner">Single/ Divorced</button></div>
         </div>
         <div id="1" class="ques">
-            <img src="/static/images/gender.png" class="ques-background-img-br" style="width: 15%; filter: brightness(75%);">
+            <img src="/static/images/gender.png" class="ques-background-img" style=" filter: brightness(75%); right: 0;bottom: 5%;">
             <h1 class="ques-h1">What is your Gender?*</h1>
             <p style="position: absolute; bottom: 0; left: 0; color: rgb(150, 150, 150); padding-left: 5px;">*We apologise for the lack of other options. Kindly choose the gender that identifies you best.</p>
             <div class="ques-options"><button onclick="next('1')" class="ques-option-inner">Male</button><button onclick="next('1')" class="ques-option-inner">Female</button></div>
         </div>
         <div id="8" class="ques">
-            <img src="/static/images/other_loan.png" class="ques-background-img-bl" style="width: 15%;">
+            <img src="/static/images/other_loan.png" class="ques-background-img" style=" left: 0;">
             <h1 class="ques-h1">Do you own any property?</h1>
             <div class="ques-options"><input type="button" name="Yes" value="Yes" onclick="next('8')" class="ques-option-inner"><button onclick="next('8')" class="ques-option-inner">No</button></div>
         </div>

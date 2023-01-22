@@ -64,6 +64,8 @@
 }
 
 .landing-h1 {
+    width: 806px;
+    max-width: 806px;
     overflow: hidden;
     white-space: nowrap;
     --tw-text-opacity: 1;
@@ -185,6 +187,32 @@
     }
 }
 
+/* landing-responsive */
+@media (max-width:950px) {
+    .landing-h1 {
+        -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        white-space: initial;
+        border-right: none;
+        overflow: auto;
+        text-align: center;
+        width: fit-content;
+    }
+    .turn-red{
+        animation-delay: 2s;
+    }
+    .landing-h2{
+        text-align: center;
+        animation-delay: 3s;
+    }
+    .landing-button{
+        animation-delay: 3s;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+}
+
 /* form */
 
 .ques {
@@ -243,29 +271,14 @@
     color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
-.ques-background-img-br {
+.ques-background-img {
     position: absolute;
     filter: brightness(50%);
     width: 15%;
     bottom: 0;
-    right: 0;
 }
 
-.ques-background-img-bc {
-    position: absolute;
-    filter: brightness(75%);
-    width: 15%;
-    bottom: 0;
-    left: 50%;
-}
 
-.ques-background-img-bl {
-    filter: brightness(75%);
-    width: 15%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
 
 .move-down {
     animation: bounce-up 400ms ease forwards;
@@ -309,3 +322,33 @@
     }
     
 } */
+
+/* form-responsive */
+@media (max-width:950px) {
+    .ques-option-inner{
+        font-size: 2rem;
+        text-align: left;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .ques-background-img{
+        width: 40%;
+    }
+    .ques-options{
+        width: 80%;
+    }
+    .img-special{
+        width: 30%;
+    }
+    
+}
+
+@media (max-width:700px) {
+    .ques-options{
+        flex-direction: column;
+    }
+    .ques-option-inner{
+        border-radius: 30px;
+    }
+    
+}
