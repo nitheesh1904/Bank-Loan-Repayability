@@ -2,89 +2,194 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skew- Repayment Scope Calculator</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/static/global.css">
-    <link rel="stylesheet" href="/static/tailwind.css">
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/global.css" />
+    <link rel="stylesheet" href="/static/tailwind.css" />
 </head>
 
 <body>
+    {% block body %}
     <div class="main">
         <!-- navbar -->
         <div>
-            <div class='nav-1'>
-                <div class='nav-2'>
-                    <a href="/"><h1 class='nav-brand'>Skew</h1></a>
+            <div class="nav-1">
+                <div class="nav-2">
+                    <a href="/">
+                        <h1 class="nav-brand">Skew</h1>
+                    </a>
                 </div>
             </div>
         </div>
 
+        <!-- back button -->
+        <div class="back" id="back-button">
+            <button onclick="prev()"><img src="/static/images/left-arrow.png" style="width: 100%;"></button>
+        </div>
         <!-- form -->
         <!-- questions are asked in reverse order -->
-        <div id="10" class="ques">
-            <img src="/static/images/home.png" class="ques-background-img">
-            <h1 class="ques-h1">What is your housing type?</h1>
-            <div class="ques-options"><input type="button" name="Yes" value="Own" onclick="next('10')" class="ques-option-inner"><input type="button" name="Yes" value="Rent" onclick="next('10')" class="ques-option-inner"></div>
-        </div>
-        <div id="9" class="ques">
-            <img src="/static/images/work.png" class="ques-background-img img-special" style="left: 0;">
-            <h1 class="ques-h1">Please enter your job type</h1>
-            <div class="ques-options" style="flex-direction: column; width: 40%;"><input type="button" name="Yes" value="Skilled" onclick="next('9')" class="ques-option-inner"><input type="button" name="Yes" value="Unskilled" onclick="next('9')" class="ques-option-inner"><input type="button" name="Yes" value="Self-employed" onclick="next('9')" class="ques-option-inner"><input type="button" name="Yes" value="Unemployed" onclick="next('9')" class="ques-option-inner"></div>
-        </div>
-        <div id="8" class="ques">
-            <img src="/static/images/other_loan.png" class="ques-background-img" style=" left: 0;">
-            <h1 class="ques-h1">Do you own any property?</h1>
-            <div class="ques-options"><input type="button" name="Yes" value="Yes" onclick="next('8')" class="ques-option-inner"><input type="button" name="Yes" value="No" onclick="next('8')" class="ques-option-inner"></div>
-        </div>
-        <div id="7" class="ques">
-            <img src="/static/images/other_loan.png" class="ques-background-img">
-            <h1 class="ques-h1">Have you taken any other loans?</h1>
-            <div class="ques-options"><input type="button" name="Yes" value="Yes" onclick="next('7')" class="ques-option-inner"><input type="button" name="Yes" value="No" onclick="next('7')" class="ques-option-inner"></div>
-        </div>
-        <div id="6" class="ques">
-            <img src="/static/images/savings.png" class="ques-background-img" style="right: 0;">
-            <h1 class="ques-h1">Your savings account balance?</h1>
-            <div class="ques-options" style="flex-direction:column"><input type="button" name="Yes" value="less than 100" onclick="next('6')" class="ques-option-inner"><input type="button" name="Yes" value="between 100 and 500" onclick="next('6')" class="ques-option-inner"><input type="button" name="Yes" value="greater than 500" onclick="next('6')" class="ques-option-inner"></div>
-        </div>
-        <div id="5" class="ques">
-            <img src="/static/images/current.png" class="ques-background-img" style="left: 0;">
-            <h1 class="ques-h1">Your current account balance?</h1>
-            <div class="ques-options" style="flex-direction:column"><input type="button" name="Yes" value="less than 0/no account" onclick="next('5')" class="ques-option-inner"><input type="button" name="Yes" value="between 0 and 200" onclick="next('5')" class="ques-option-inner"><input type="button" name="Yes" value="greater than 200" onclick="next('5')" class="ques-option-inner"></div>
-        </div>
-        <div id="4" class="ques">
-            <img src="/static/images/loan.png" class="ques-background-img img-special" style="left: 0;">
-            <h1 class="ques-h1">Please enter your loan history</h1>
-            <div class="ques-options" style="flex-direction: column; width: 80%;"><input type="button" name="Yes" value="No loans taken at previously/ All past loans paid pack duly and no other loans exist currently" onclick="next('4')" class="ques-option-inner"><input type="button" name="Yes" value="critical account" onclick="next('4')" class="ques-option-inner"><input type="button" name="Yes" value="I have other ongoing loans but I have paid all my dues promptly so far" onclick="next('4')" class="ques-option-inner"><input type="button" name="Yes" value="I have had delay in paying off loans in the past" onclick="next('4')" class="ques-option-inner"></div>
-        </div>
-        <div id="3" class="ques">
-            <img src="/static/images/guarantor.png" class="ques-background-img" style="filter:brightness(50%); left: 0;">
-            <h1 class="ques-h1">Do you have a guarantor or Co-applicant?</h1>
-            <div class="ques-options"><input type="button" name="Yes" value="Guarantor" onclick="next('3')" class="ques-option-inner"><input type="button" name="Yes" value="Coapplicant" onclick="next('3')" class="ques-option-inner"><input type="button" name="Yes" value="None" onclick="next('3')" class="ques-option-inner"></div>
-        </div>
-        <div id="2" class="ques">
-            <img src="/static/images/married.png" class="ques-background-img" style="filter: brightness(100%);">
-            <h1 class="ques-h1">Please mention your marital status</h1>
-            <div class="ques-options"><input type="button" name="Yes" value="Married" onclick="next('2')" class="ques-option-inner"><input type="button" name="Yes" value="Single/Divorced" onclick="next('2')" class="ques-option-inner"></div>
-        </div>
-        <div id="1" class="ques">
-            <img src="/static/images/gender.png" class="ques-background-img" style=" filter: brightness(75%); right: 0;bottom: 5%;">
-            <h1 class="ques-h1">What is your Gender?*</h1>
-            <p style="position: absolute; bottom: 0; left: 0; color: rgb(150, 150, 150); padding-left: 5px;">*We apologise for the lack of other options. Kindly choose the gender that identifies you best.</p>
-            <div class="ques-options"><input type="button" name="Yes" value="Male" onclick="next('1')" class="ques-option-inner"><input type="button" name="Yes" value="Female" onclick="next('1')" class="ques-option-inner"></div>
-        </div>
-
+        <form method="POST" action="/home">
+            <div id="10" class="ques">
+                <img src="/static/images/home.png" class="ques-background-img" />
+                <h1 class="ques-h1">What is your housing type?</h1>
+                <div class="ques-options">
+                    <input type="submit" name="type_of_housing" value="Own" onclick="next('10')"
+                        class="ques-option-inner">
+                    <input type="submit" name="type_of_housing" value="Rent" onclick="next('10')"
+                        class="ques-option-inner">
+                </div>
+            </div>
+            <div id="9" class="ques">
+                <img src="/static/images/work.png" class="ques-background-img img-special" style="left: 0" />
+                <h1 class="ques-h1">Please enter your job type</h1>
+                <div class="ques-options" style="flex-direction: column; width: 40%">
+                    <input type="button" name="Skilled" value="Skilled" onclick="next('9')" class="ques-option-inner">
+                    <input type="button" name="Unskilled" value="Unskilled" onclick="next('9')"
+                        class="ques-option-inner">
+                    <input type="button" name="Self-employed" value="Self-employed" onclick="next('9')"
+                        class="ques-option-inner">
+                    <input type="button" name="Unemployed" value="Unemployed" onclick="next('9')"
+                        class="ques-option-inner">
+                </div>
+            </div>
+            <div id="8" class="ques">
+                <img src="/static/images/house.png" class="ques-background-img" style="left: 0" />
+                <h1 class="ques-h1">Do you own any property?</h1>
+                <div class="ques-options">
+                    <input type="button" name="Yes" value="Yes" onclick="next('8')" class="ques-option-inner">
+                    <input type="button" name="No" value="No" onclick="next('8')" class="ques-option-inner">
+                </div>
+            </div>
+            <div id="7" class="ques">
+                <img src="/static/images/other_loan.png" class="ques-background-img" />
+                <h1 class="ques-h1">Have you taken any other loans?</h1>
+                <div class="ques-options">
+                    <input type="button" name="Yes" value="Yes" onclick="next('7')" class="ques-option-inner">
+                    <input type="button" name="No" value="No" onclick="next('7')" class="ques-option-inner">
+                </div>
+            </div>
+            <div id="6" class="ques">
+                <img src="/static/images/savings.png" class="ques-background-img" style="right: 0" />
+                <h1 class="ques-h1">Your savings account balance?</h1>
+                <div class="ques-options" style="flex-direction: column">
+                    <input type="button" name="less than 100" value="less than 100" onclick="next('6')"
+                        class="ques-option-inner">
+                    <input type="button" name="between 100 and 500" value="between 100 and 500" onclick="next('6')"
+                        class="ques-option-inner">
+                    <input type="button" name="greater than 500" value="greater than 500" onclick="next('6')"
+                        class="ques-option-inner">
+                </div>
+            </div>
+            <div id="5" class="ques">
+                <img src="/static/images/current.png" class="ques-background-img" style="left: 0" />
+                <h1 class="ques-h1">Your current account balance?</h1>
+                <div class="ques-options" style="flex-direction: column">
+                    <input type="button" name="less than 0/no account" value="less than 0/no account"
+                        onclick="next('5')" class="ques-option-inner">
+                    <input type="button" name="between 0 and 200" value="between 0 and 200" onclick="next('5')"
+                        class="ques-option-inner">
+                    <input type="button" name="greater than 200" value="greater than 200" onclick="next('5')"
+                        class="ques-option-inner">
+                </div>
+            </div>
+            <div id="4" class="ques">
+                <img src="/static/images/loan.png" class="ques-background-img img-special" style="left: 0" />
+                <h1 class="ques-h1">Please enter your loan history</h1>
+                <div class="ques-options" style="flex-direction: column; width: 80%">
+                    <input type="button"
+                        name="No loans taken at previously/ All past loans paid pack duly and no other loans exist currently"
+                        value="No loans taken at previously/ All past loans paid pack duly and no other loans exist currently"
+                        onclick="next('4')" class="ques-option-inner">
+                    <input type="button" name="critical account" value="critical account" onclick="next('4')"
+                        class="ques-option-inner">
+                    <input type="button" name="I have other ongoing loans but I have paid all my dues promptly so far"
+                        value="I have other ongoing loans but I have paid all my dues promptly so far"
+                        onclick="next('4')" class="ques-option-inner">
+                    <input type="button" name="I have had delay in paying off loans in the past"
+                        value="I have had delay in paying off loans in the past" onclick="next('4')"
+                        class="ques-option-inner">
+                </div>
+            </div>
+            <div id="3" class="ques">
+                <img src="/static/images/guarantor.png" class="ques-background-img"
+                    style="filter: brightness(50%); left: 0" />
+                <h1 class="ques-h1">Do you have a guarantor or Co-applicant?</h1>
+                <div class="ques-options">
+                    <input type="button" name="Guarantor" value="Guarantor" onclick="next('3')"
+                        class="ques-option-inner">
+                    <input type="button" name="Coapplicant" value="Coapplicant" onclick="next('3')"
+                        class="ques-option-inner">
+                    <input type="button" name="None" value="None" onclick="next('3')" class="ques-option-inner">
+                </div>
+            </div>
+            <div id="2" class="ques">
+                <img src="/static/images/married.png" class="ques-background-img" style="filter: brightness(100%)" />
+                <h1 class="ques-h1">Please mention your marital status</h1>
+                <div class="ques-options">
+                    <input type="button" name="Married" value="Married" onclick="next('2')" class="ques-option-inner">
+                    <input type="button" name="Single/Divorced" value="Single/Divorced" onclick="next('2')"
+                        class="ques-option-inner">
+                </div>
+            </div>
+            <div id="1" class="ques">
+                <img src="/static/images/gender.png" class="ques-background-img"
+                    style="filter: brightness(75%); right: 0; bottom: 5%" />
+                <h1 class="ques-h1">What is your Gender?*</h1>
+                <p style="
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              color: rgb(150, 150, 150);
+              padding-left: 5px;
+            ">
+                    *We apologise for the lack of other options. Kindly choose the
+                    gender that identifies you best.
+                </p>
+                <div class="ques-options">
+                    <input type="button" value="Male" onclick="next('1')" class="ques-option-inner">
+                    <button onclick="next('1', 'gender', 'female')" class="ques-option-inner">Female</button>
+                </div>
+            </div>
+            <input hidden type="text" name="gender" value="" id="gender">
+            <input hidden type="text" name="marital" value="" id="marital">
+            <input hidden type="text" name="g_co" value="" id="g_co">
+            <input hidden type="text" name="loan_history" value="" id="loan_history">
+            <input hidden type="text" name="cab" value="" id="cab">
+            <input hidden type="text" name="sab" value="" id="sab">
+            <input hidden type="text" name="other_loans" value="" id="other_loans">
+            <input hidden type="text" name="property" value="" id="property">
+            <input hidden type="text" name="job_type" value="" id="job_type">
+            <input hidden type="text" name="housing_type" value="" id="housing_type">
+        </form>
     </div>
+    {% endblock %}
+
 </body>
 
 <script>
-    function next(index){
-        document.getElementById(index).childNodes[1].className+=" move-down";
+    var back = 1;
+    function prev() {
+        back -= 1;
+        document.getElementById(back.toString()).childNodes[1].classList.remove("move-down");
+        document.getElementById(back.toString()).classList.remove("move-right");
+        if (back == 1) {
+            document.getElementById("back-button").classList.remove("visible");
+        }
+    }
+    function next(index, ques_id, value) {
+        document.getElementById(index).childNodes[1].classList.add("move-down");
         // let index_int = parseInt(index)-1;
         // let prev = index_int.toString();
         // document.getElementById(prev).classList.add("pop-out");
         document.getElementById(index).classList.add("move-right");
+        back += 1;
+        if (back > 1) {
+            document.getElementById("back-button").classList.add("visible");
+        }
+
+        document.getElementById(ques_id).value = value;
         // setTimeout(function(){
         //     document.getElementById(prev).classList.remove("pop-out");
         // }, 2000);

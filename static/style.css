@@ -215,6 +215,33 @@
 
 /* form */
 
+.back{
+    position: absolute;
+    top: 6rem;
+    z-index: 99;
+    left: 0;
+    width: 40px;
+    object-fit: contain;
+    display: none;
+}
+
+.visible{
+    display: block;
+    animation: back-visible 0.5s forwards;
+}
+
+@keyframes back-visible {
+    0%{
+        top:6rem;
+    }
+    60%{
+        top:7.3rem;
+    }
+    100%{
+        top:7rem;
+    }
+}
+
 .ques {
     background-color: rgb(15 23 42 / var(--tw-bg-opacity));
     position: absolute;
