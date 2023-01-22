@@ -245,7 +245,8 @@
 
 .ques-background-img-br {
     position: absolute;
-    filter: brightness(75%);
+    filter: brightness(50%);
+    width: 15%;
     bottom: 0;
     right: 0;
 }
@@ -253,12 +254,14 @@
 .ques-background-img-bc {
     position: absolute;
     filter: brightness(75%);
+    width: 15%;
     bottom: 0;
     left: 50%;
 }
 
 .ques-background-img-bl {
     filter: brightness(75%);
+    width: 15%;
     position: absolute;
     bottom: 0;
     left: 0;
