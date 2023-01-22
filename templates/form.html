@@ -31,6 +31,36 @@
         <!-- form -->
         <!-- questions are asked in reverse order -->
         <form method="POST" action="/home">
+            <div id="16" class="ques">
+                <h1 class="ques-h1">Time Duration for loan (In months)</h1>
+                <input type="text" name="time" style="background-color: rgb(20, 42, 93); height: 3rem; font-size: 2rem; caret-color:#818cf8 ;">
+                <input type="submit" class="ques-option-inner" value="Check your scope of repayment">
+            </div>
+            <div id="15" class="ques">
+                <h1 class="ques-h1">Percentage of Income paid as Installment.</h1>
+                <input type="text" name="income" style="background-color: rgb(20, 42, 93); height: 3rem; font-size: 2rem; caret-color:#818cf8 ;">
+                <button class="ques-option-inner" onclick="next_text('15')">Next</button>
+            </div>
+            <div id="14" class="ques">
+                <h1 class="ques-h1">Age of applicant (In Years)</h1>
+                <input type="text" name="age" style="background-color: rgb(20, 42, 93); height: 3rem; font-size: 2rem; caret-color:#818cf8 ;">
+                <button class="ques-option-inner" onclick="next_text('14')">Next</button>
+            </div>
+            <div id="13" class="ques">
+                <h1 class="ques-h1">Number of Loans taken from Current Bank.</h1>
+                <input type="text" name="no_loans" style="background-color: rgb(20, 42, 93); height: 3rem; font-size: 2rem; caret-color:#818cf8 ;">
+                <button class="ques-option-inner" onclick="next_text('13')">Next</button>
+            </div>
+            <div id="12" class="ques">
+                <h1 class="ques-h1">Enter the loan amount taken</h1>
+                <input type="text" name="loan_amount" style="background-color: rgb(20, 42, 93); height: 3rem; font-size: 2rem; caret-color:#818cf8 ;">
+                <button class="ques-option-inner" onclick="next_text('12')">Next</button>
+            </div>
+            <div id="11" class="ques">
+                <h1 class="ques-h1">Number of People who will provide maintanence?</h1>
+                <input type="text" name="maintanence" style="background-color: rgb(20, 42, 93); height: 3rem; font-size: 2rem; caret-color:#818cf8 ;">
+                <button class="ques-option-inner" onclick="next_text('11')">Next</button>
+            </div>
             <div id="10" class="ques">
                 <img src="/static/images/home.png" class="ques-background-img" />
                 <h1 class="ques-h1">What is your housing type?</h1>
@@ -174,6 +204,13 @@
         // setTimeout(function(){
         //     document.getElementById(prev).classList.remove("pop-out");
         // }, 2000);
+    }
+    function next_text(index){
+        document.getElementById(index).classList.add("move-right");
+        back += 1;
+        if (back > 1) {
+            document.getElementById("back-button").classList.add("visible");
+        }
     }
 </script>
 
