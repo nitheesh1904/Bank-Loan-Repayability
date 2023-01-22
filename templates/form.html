@@ -35,81 +35,64 @@
                 <img src="/static/images/home.png" class="ques-background-img" />
                 <h1 class="ques-h1">What is your housing type?</h1>
                 <div class="ques-options">
-                    <input type="submit" name="type_of_housing" value="Own" onclick="next('10')"
-                        class="ques-option-inner">
-                    <input type="submit" name="type_of_housing" value="Rent" onclick="next('10')"
-                        class="ques-option-inner">
+                    <button onclick="next('10', 'housing_type', 'own')" class="ques-option-inner">Own</button>
+                    <button onclick="next('10', 'housing_type', 'rent')" class="ques-option-inner">Rent</button>
+
                 </div>
             </div>
             <div id="9" class="ques">
                 <img src="/static/images/work.png" class="ques-background-img img-special" style="left: 0" />
                 <h1 class="ques-h1">Please enter your job type</h1>
                 <div class="ques-options" style="flex-direction: column; width: 40%">
-                    <input type="button" name="Skilled" value="Skilled" onclick="next('9')" class="ques-option-inner">
-                    <input type="button" name="Unskilled" value="Unskilled" onclick="next('9')"
-                        class="ques-option-inner">
-                    <input type="button" name="Self-employed" value="Self-employed" onclick="next('9')"
-                        class="ques-option-inner">
-                    <input type="button" name="Unemployed" value="Unemployed" onclick="next('9')"
-                        class="ques-option-inner">
+                    <button onclick="next('9', 'job_type', 'skilled')" class="ques-option-inner">Skilled</button>
+                    <button onclick="next('9', 'job_type', 'unskilled')" class="ques-option-inner">Unskilled</button>
+                    <button onclick="next('9', 'job_type', 'self employed')" class="ques-option-inner">Self_employed</button>
+                    <button onclick="next('9', 'job_type', 'unemployed')" class="ques-option-inner">Unemployed</button>
                 </div>
             </div>
             <div id="8" class="ques">
                 <img src="/static/images/house.png" class="ques-background-img" style="left: 0" />
                 <h1 class="ques-h1">Do you own any property?</h1>
                 <div class="ques-options">
-                    <input type="button" name="Yes" value="Yes" onclick="next('8')" class="ques-option-inner">
-                    <input type="button" name="No" value="No" onclick="next('8')" class="ques-option-inner">
+                    <button onclick="next('8', 'property', 'yes')" class="ques-option-inner">Yes</button>
+                    <button onclick="next('8', 'property', 'no')" class="ques-option-inner">No</button>
                 </div>
             </div>
             <div id="7" class="ques">
                 <img src="/static/images/other_loan.png" class="ques-background-img" />
                 <h1 class="ques-h1">Have you taken any other loans?</h1>
                 <div class="ques-options">
-                    <input type="button" name="Yes" value="Yes" onclick="next('7')" class="ques-option-inner">
-                    <input type="button" name="No" value="No" onclick="next('7')" class="ques-option-inner">
+                    <button onclick="next('7', 'other_loans', 'yes')" class="ques-option-inner">Yes</button>
+                    <button onclick="next('7', 'other_loans', 'no')" class="ques-option-inner">No</button>
                 </div>
             </div>
             <div id="6" class="ques">
                 <img src="/static/images/savings.png" class="ques-background-img" style="right: 0" />
                 <h1 class="ques-h1">Your savings account balance?</h1>
                 <div class="ques-options" style="flex-direction: column">
-                    <input type="button" name="less than 100" value="less than 100" onclick="next('6')"
-                        class="ques-option-inner">
-                    <input type="button" name="between 100 and 500" value="between 100 and 500" onclick="next('6')"
-                        class="ques-option-inner">
-                    <input type="button" name="greater than 500" value="greater than 500" onclick="next('6')"
-                        class="ques-option-inner">
+                    <button onclick="next('6', 'sab', 'less than 100')" class="ques-option-inner">less than 100</button>
+                    <button onclick="next('6', 'sab', 'between 100 and 500')" class="ques-option-inner">between 100 and 500</button>
+                    <button onclick="next('6', 'sab', 'above 500')" class="ques-option-inner">above 500</button>
                 </div>
             </div>
             <div id="5" class="ques">
                 <img src="/static/images/current.png" class="ques-background-img" style="left: 0" />
                 <h1 class="ques-h1">Your current account balance?</h1>
                 <div class="ques-options" style="flex-direction: column">
-                    <input type="button" name="less than 0/no account" value="less than 0/no account"
-                        onclick="next('5')" class="ques-option-inner">
-                    <input type="button" name="between 0 and 200" value="between 0 and 200" onclick="next('5')"
-                        class="ques-option-inner">
-                    <input type="button" name="greater than 200" value="greater than 200" onclick="next('5')"
-                        class="ques-option-inner">
+                    <button onclick="next('5', 'cab', 'less than 0/no account')" class="ques-option-inner">less than 0/no account</button>
+                    <button onclick="next('5', 'cab', 'between 0 and 200')" class="ques-option-inner">between 0 and 200</button>
+                    <button onclick="next('5', 'cab', 'greater than 200')" class="ques-option-inner">greater than 200</button>
                 </div>
             </div>
             <div id="4" class="ques">
                 <img src="/static/images/loan.png" class="ques-background-img img-special" style="left: 0" />
                 <h1 class="ques-h1">Please enter your loan history</h1>
                 <div class="ques-options" style="flex-direction: column; width: 80%">
-                    <input type="button"
-                        name="No loans taken at previously/ All past loans paid pack duly and no other loans exist currently"
-                        value="No loans taken at previously/ All past loans paid pack duly and no other loans exist currently"
-                        onclick="next('4')" class="ques-option-inner">
-                    <input type="button" name="critical account" value="critical account" onclick="next('4')"
-                        class="ques-option-inner">
-                    <input type="button" name="I have other ongoing loans but I have paid all my dues promptly so far"
-                        value="I have other ongoing loans but I have paid all my dues promptly so far"
-                        onclick="next('4')" class="ques-option-inner">
-                    <input type="button" name="I have had delay in paying off loans in the past"
-                        value="I have had delay in paying off loans in the past" onclick="next('4')"
-                        class="ques-option-inner">
+                    
+                    <button onclick="next('4', 'loan_history', 'no loans taken/all loans paid back duly')" class="ques-option-inner">No loans taken at previously/ All past loans paid pack duly and no other loans exist currently</button>
+                    <button onclick="next('4', 'loan_history', 'critical account')" class="ques-option-inner">critical account</button>
+                    <button onclick="next('4', 'loan_history', 'existing laons paid back duly till now')" class="ques-option-inner">I have other ongoing loans but I have paid all my dues promptly so far</button>
+                    <button onclick="next('4', 'loan_history', 'delay in paying off loans in the past')" class="ques-option-inner">I have had delay in paying off loans in the past</button>
                 </div>
             </div>
             <div id="3" class="ques">
@@ -117,20 +100,18 @@
                     style="filter: brightness(50%); left: 0" />
                 <h1 class="ques-h1">Do you have a guarantor or Co-applicant?</h1>
                 <div class="ques-options">
-                    <input type="button" name="Guarantor" value="Guarantor" onclick="next('3')"
-                        class="ques-option-inner">
-                    <input type="button" name="Coapplicant" value="Coapplicant" onclick="next('3')"
-                        class="ques-option-inner">
-                    <input type="button" name="None" value="None" onclick="next('3')" class="ques-option-inner">
+                    <button onclick="next('3', 'g_co', 'gaurantor')" class="ques-option-inner">Guarantor</button>
+                    <button onclick="next('3', 'g_co', 'co-applicant')" class="ques-option-inner">Co-applicant</button>
+                    <button onclick="next('3', 'g_co', 'none')" class="ques-option-inner">None</button>
+
                 </div>
             </div>
             <div id="2" class="ques">
                 <img src="/static/images/married.png" class="ques-background-img" style="filter: brightness(100%)" />
                 <h1 class="ques-h1">Please mention your marital status</h1>
                 <div class="ques-options">
-                    <input type="button" name="Married" value="Married" onclick="next('2')" class="ques-option-inner">
-                    <input type="button" name="Single/Divorced" value="Single/Divorced" onclick="next('2')"
-                        class="ques-option-inner">
+                    <button onclick="next('2', 'marital', 'married')" class="ques-option-inner">Married</button>
+                    <button onclick="next('2', 'marital', 'single/divorced')" class="ques-option-inner">Single/Divorced</button>
                 </div>
             </div>
             <div id="1" class="ques">
@@ -148,7 +129,7 @@
                     gender that identifies you best.
                 </p>
                 <div class="ques-options">
-                    <input type="button" value="Male" onclick="next('1')" class="ques-option-inner">
+                    <button onclick="next('1', 'gender', 'male')" class="ques-option-inner">Male</button>
                     <button onclick="next('1', 'gender', 'female')" class="ques-option-inner">Female</button>
                 </div>
             </div>
