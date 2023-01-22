@@ -20,9 +20,12 @@
         </div>
       </div>
 
-      <!-- form -->
-      <!-- questions are asked in reverse order -->
-      <form action="/dihn" method="POST">
+        <!-- back button -->
+        <div class="back" id="back-button">
+            <button onclick="prev()"><img src="/static/images/left-arrow.png" style="width: 100%;"></button>
+        </div>
+        <!-- form -->
+        <!-- questions are asked in reverse order -->
         <div id="10" class="ques">
           <img src="/static/images/home.png" class="ques-background-img" />
           <h1 class="ques-h1">What is your housing type?</h1>
@@ -306,16 +309,29 @@
     </div>
   </body>
 
-  <script>
-    function next(index) {
-      document.getElementById(index).childNodes[1].className += " move-down";
-      // let index_int = parseInt(index)-1;
-      // let prev = index_int.toString();
-      // document.getElementById(prev).classList.add("pop-out");
-      document.getElementById(index).classList.add("move-right");
-      // setTimeout(function(){
-      //     document.getElementById(prev).classList.remove("pop-out");
-      // }, 2000);
+<script>
+    var back=1;
+    function prev(){
+        back-=1;
+        document.getElementById(back.toString()).childNodes[1].classList.remove("move-down");
+        document.getElementById(back.toString()).classList.remove("move-right");
+        if (back==1){
+            document.getElementById("back-button").classList.remove("visible");
+        }
+    }
+    function next(index){
+        document.getElementById(index).childNodes[1].classList.add("move-down");
+        // let index_int = parseInt(index)-1;
+        // let prev = index_int.toString();
+        // document.getElementById(prev).classList.add("pop-out");
+        document.getElementById(index).classList.add("move-right");
+        back+=1;
+        if (back>1){
+            document.getElementById("back-button").classList.add("visible");
+        }
+        // setTimeout(function(){
+        //     document.getElementById(prev).classList.remove("pop-out");
+        // }, 2000);
     }
   </script>
 </html>
