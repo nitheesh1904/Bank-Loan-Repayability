@@ -25,8 +25,9 @@ def form():
         no_loans = request.form['no_loans'] 
         age = request.form['age'] 
         income = request.form['income'] 
-        time = request.form['time'] 
-        flash([job_type, property, other_loans, sab, cab, loan_amount, loan_history, no_loans, other_loans, g_co, marital, gender, maintanence, age, income, time])
+        time = request.form['time']
+        housing_type = request.form['housing_type']
+        flash([job_type, property, other_loans, sab, cab, loan_amount, loan_history, no_loans, other_loans, g_co, marital, gender, maintanence, age, income, time, housing_type])
         return redirect(url_for('form'))
     return render_template("form.html")
 

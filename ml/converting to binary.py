@@ -1,60 +1,59 @@
 
 a=[]
 
-if Loan History=='critical account':
+if loan_history=='critical account':
     a.extend(1,0,0,0)
-elif Loan History=='delay in paying off loans in the past':
+elif loan_history=='delay in paying off loans in the past':
     a.extend(0,1,0,0)
-elif Loan History=='existing loans paid back duly till now':
+elif loan_history=='existing loans paid back duly till now':
     a.extend(0,0,1,0)
-elif Loan History=='no loans taken/all loans paid back duly':
+elif loan_history=='no loans taken/all loans paid back duly':
     a.extend(0,0,0,1)
 
-if amount in current account=='between 0 and 200':
+if cab=='between 0 and 200':
     a.extend(1,0,0)
- elif amount in current account=='greater than 200':
+ elif cab=='greater than 200':
     a.extend(0,1,0)
-elif amount in current account=='less than 0/no account':
+elif cab=='less than 0/no account':
     a.extend(0,0,1)
 
-if amount in savings account=='above 500':
+if sab=='above 500':
     a.extend(1,0,0)
-elif amount in savings account=='between 100 and 500':
+elif sab=='between 100 and 500':
     a.extend(0,1,0)
-elif amount in savings account=='less than 100':
+elif sab=='less than 100':
     a.extend(0,0,1)
 
-if Other loans plans taken=='no':
+if other_loans=='no':
     a.extend(1,0)
-elif Other loans plans taken=='yes':
+elif other_loans=='yes':
     a.extend(0,1)
 
-if Owned property=='no':
+if property=='no':
     a.extend(1,0)
-elif Owned property=='yes':
+elif property=='yes':
     a.extend(0,1)
 
-if Type of job performed=='self employed':
-    a.extend(1,0,0,0)
-elif  Type of job performed=='skilled':
+if job_type=='self employed':
+    a.extend([1,0,0,0])
+elif  job_type=='skilled':
     a.extend(0,1,0,0)
-elif Type of job performed=='unemployed':
+elif job_type=='unemployed':
     a.extend(0,0,1,0)
-elif Type of job performed=='unskilled':
+elif job_type=='unskilled':
     a.extend(0,0,0,1)
 
-if Type of Housing=='own':
+if housing_type=='own':
     a.extend(1,0)
-elif Type of Housing_own=='rent':
+elif housing_type=='rent':
     a.extend(0,1)
 
-if Guarantor or Debtor=='co-applicant':
+if g_co=='co-applicant':
     a.extend(1,0,0)
-elif Guarantor or Debtor=='gaurantor':
+elif g_co=='gaurantor':
     a.extend(0,1,0)
-elif Guarantor or Debtor=='none':
+elif g_co=='none':
     a.extend(0,0,1)
-
 from sklearn.preprocessing import MinMaxScaler
 scaler=MinMaxScaler()
 final=scaler.fit_transform(a)
