@@ -54,6 +54,17 @@ elif g_co=='gaurantor':
     a.extend(0,1,0)
 elif g_co=='none':
     a.extend(0,0,1)
+
+if gender=='male':
+    if marital=='single/divorced':
+        a.extend([0,0,1])
+    elif marital=='married':
+        a.extend([0,1,0])
+
+elif gender=='female':
+    a.extend([1,0,0])
+
+
 from sklearn.preprocessing import MinMaxScaler
 scaler=MinMaxScaler()
 final=scaler.fit_transform(a)
