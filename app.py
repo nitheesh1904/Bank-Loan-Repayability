@@ -128,7 +128,7 @@ def form():
         elif g_co=='none':
             a.extend([0,0,1])
 
-        json_file = open('ml\model_final.json', 'r')
+        json_file = open('ml\model_final_tuned.json', 'r')
         loaded_model_json = json_file.read()
         json_file.close()
         loaded_model = model_from_json(loaded_model_json)
