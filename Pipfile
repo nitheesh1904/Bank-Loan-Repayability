@@ -5,14 +5,12 @@ name = "pypi"
 
 [packages]
 flask = "*"
-psycopg2 = "*"
 psycopg2-binary = "*"
 flask-sqlalchemy = "*"
 gunicorn = "*"
 numpy = "*"
 pandas = "*"
 scikit-learn = "*"
-seaborn = "*"
 tensorflow = "*"
 
 [dev-packages]
