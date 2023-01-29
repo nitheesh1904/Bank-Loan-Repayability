@@ -104,3 +104,10 @@ input[type=button], input[type=submit]{
     cursor: url("cursor.svg"), auto;
     
 }
+
+@media (max-width:450px) {
+    p{
+        width: 60%;
+    }
+    
+}

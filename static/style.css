@@ -52,6 +52,16 @@
     text-decoration: underline rgb(239 68 68);
 }
 
+.nav-bonus {
+    color: white;
+    text-decoration: none;
+    transition: text-decoration 0.5s linear;
+}
+
+.nav-bonus:hover {
+    text-decoration: underline rgb(239 68 68);
+}
+
 /* landing css */
 
 .landing-1 {
@@ -198,14 +208,17 @@
         text-align: center;
         width: fit-content;
     }
-    .turn-red{
+
+    .turn-red {
         animation-delay: 2s;
     }
-    .landing-h2{
+
+    .landing-h2 {
         text-align: center;
         animation-delay: 3s;
     }
-    .landing-button{
+
+    .landing-button {
         animation-delay: 3s;
         font-size: 2rem;
         text-align: center;
@@ -215,7 +228,7 @@
 
 /* form */
 
-.back{
+.back {
     position: absolute;
     top: 6rem;
     z-index: 99;
@@ -225,22 +238,24 @@
     display: none;
 }
 
-.visible{
+.visible {
     display: block;
     animation: back-visible 0.5s forwards;
 }
 
 @keyframes back-visible {
-    0%{
+    0% {
         opacity: 0;
-        top:6rem;
+        top: 6rem;
     }
-    60%{
-        top:7.3rem;
+
+    60% {
+        top: 7.3rem;
     }
-    100%{
+
+    100% {
         opacity: 1;
-        top:7rem;
+        top: 7rem;
     }
 }
 
@@ -256,7 +271,6 @@
     transition: transform 0.5s, opacity 0.2s;
     /* opacity: 0; */
 }
-
 
 .ques-h1 {
     font-size: 3rem;
@@ -354,30 +368,105 @@
 
 /* form-responsive */
 @media (max-width:950px) {
-    .ques-option-inner{
+    .ques-option-inner {
+        white-space: break-spaces;
         font-size: 2rem;
+        line-height: 2.5rem;
         text-align: left;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        border-radius: 30px;
     }
-    .ques-background-img{
+
+    .ques-background-img {
         width: 40%;
     }
-    .ques-options{
+
+    .ques-options {
         width: 80%;
     }
-    .img-special{
+
+    .img-special {
         width: 30%;
     }
-    
+
+    .ques-h1 {
+        margin: 0;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .ques-options {
+        height: 55%;
+        overflow-y: scroll;
+    }
 }
 
 @media (max-width:700px) {
-    .ques-options{
+    .ques-options {
         flex-direction: column;
     }
-    .ques-option-inner{
+
+    .ques-option-inner {
         border-radius: 30px;
     }
-    
+
+}
+
+@media (max-width:450px) {
+    .ques-h1 {
+        font-size: 2rem;
+        margin: 0;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .ques-option-inner {
+        white-space: break-spaces;
+        font-size: 1.5rem;
+    }
+
+    .ques {
+        height: calc(100vh - 6rem);
+        bottom: 0;
+        justify-content: center;
+    }
+
+    .ques-options {
+        height: 55%;
+        overflow-y: scroll;
+        justify-content: unset;
+    }
+}
+
+/* result */
+.result-h1 {
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    width: 60%;
+    color: white;
+    text-align: center;
+}
+
+.result-h2 {
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    width: 60%;
+    color: rgb(177, 175, 175);
+    text-align: center;
+}
+
+.result-h2:hover {
+    text-decoration: underline;
+}
+
+/* bonus */
+
+.bonus-result-p {
+    color: white;
+    font-size: 1rem;
 }
