@@ -287,5 +287,5 @@ def bonus_result():
     return render_template("bonus-result.html", resu=int(result*15000))
 
 if __name__ == "__main__":
-    app.debug = True
+    app.debug = False
     app.run()
