@@ -36,4 +36,4 @@ Once all modules are installed, the local server can be started by running:
 
 
 ## Screenshots
-
+![Home page](/static/images/ss/home.png)
