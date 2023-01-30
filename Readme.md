@@ -47,3 +47,5 @@ Once all modules are installed, the local server can be started by running:
 ### Loan Amount Calculator- Result
 ![Home page](/static/images/ss/bonus-result.png)
 
+## Known Issues
+The website has not been succesfully deployed yet. The website has been hosted for free with the help of Render, and can be viewed [here](loan-repayment-calculator.onrender.com/). The website currently shows an internal server error upon entering all the details of the user and submitting the user input.
