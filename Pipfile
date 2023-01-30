@@ -11,6 +11,7 @@ gunicorn = "*"
 numpy = "*"
 pandas = "*"
 scikit-learn = "*"
+tensorflow = "*"
 
 [dev-packages]
 ipykernel = "*"
