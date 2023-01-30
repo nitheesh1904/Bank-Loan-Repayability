@@ -36,4 +36,14 @@ Once all modules are installed, the local server can be started by running:
 
 
 ## Screenshots
+### Homepage
 ![Home page](/static/images/ss/home.png)
+### Form
+![Home page](/static/images/ss/form.png)
+### Result Page
+![Home page](/static/images/ss/result.png)
+### Loan Amount Calculator
+![Home page](/static/images/ss/bonus.png)
+### Loan Amount Calculator- Result
+![Home page](/static/images/ss/bonus-result.png)
+
